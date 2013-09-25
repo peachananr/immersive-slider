@@ -1,0 +1,185 @@
+/*=================================================
+Class Definitions
+=================================================*/
+
+.immersive_slider {
+  background: #161923;
+  max-width: 100%;
+  height: 480px;
+  opacity: .9;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+.immersive_slider .is-slide  {
+  display: table;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 50px 100px;
+  position: absolute;
+}
+.immersive_slider .is-slide .image  {
+  float: none;
+  width: 50%;
+  padding-left: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  vertical-align: middle;
+  display: table-cell;
+  padding: 0 0 0 10px;
+}
+.is-bg-overflow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.is-overflow, .is-bg-overflow {
+  height: 100%;
+}
+
+.ease {
+  -webkit-transition: 1000ms ease all;
+  -moz-transition: 1000ms ease all;
+  -o-transition: 1000ms ease all;
+  transition: 1000ms ease all;
+}
+
+.bounce {
+  -webkit-transition: 1000ms cubic-bezier(0.175, 0.885, 0.420, 1.310) all;
+  -moz-transition: 1000ms cubic-bezier(0.175, 0.885, 0.420, 1.310) all;
+  -o-transition: 1000ms cubic-bezier(0.175, 0.885, 0.420, 1.310) all;
+  transition: 1000ms cubic-bezier(0.175, 0.885, 0.420, 1.310) all;
+}
+
+.no-animation {
+  -webkit-transition: none!important;
+  -moz-transition: none!important;
+  -o-transition: none!important;
+  transition: none !important;
+}
+
+.immersive_slider .is-slide .image img{
+  max-width: 100%;
+  display: block;
+  width: 100%;
+}
+
+.immersive_slider .is-slide .content {
+  float: none;
+  width: 50%;
+  padding-right: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  color: white;
+  text-align: left;
+  line-height: 160%;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.immersive_slider .is-slide .content h2{
+  font-size: 42px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.is-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.is-container .is-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.is-container .is-background img{
+  width: 100%;
+  height: 100%;
+  left: 0;
+  position: relative;
+}
+
+.is-container .is-background.gs_cssblur {
+  -webkit-filter: blur(20px);
+  -moz-filter: blur(20px);
+  -o-filter: blur(20px);
+  filter: blur(20px);
+}
+
+.is-pagination {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 20px;
+  z-index: 5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.is-pagination li {
+  padding: 0;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+.is-pagination li a{
+  padding: 10px;
+  width: 4px;
+  height: 4px;
+  display: block;
+  
+}
+.is-pagination li a:before{
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.is-pagination li a.active:before{
+  width: 10px;
+  height: 10px;
+  background: none;
+  border: 1px solid white;
+  margin-top: -4px;
+  left: 8px;
+}
+
+.is-next,  .is-prev {
+  padding: 5px 5px 15px;
+  font-size: 50px;
+  position: absolute;
+  bottom: 50%;
+  margin-bottom: -36px;
+  width: 35px;
+  color: #FFF;
+  display: inline-block;
+  line-height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.is-next {
+  right: 10px;
+}
+
+.is-prev {
+  left: 10px;
+}
