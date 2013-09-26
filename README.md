@@ -16,21 +16,24 @@ Immersive Slider let you create a unique immersive slider experience that change
 To add this to your website, simply include the latest jQuery library together with `jquery.immersive-slider.js`, and `immersive-slider.css` into your document's `<head>` and create an HTML markup as follows:
 
 ````html
-<div id="immersive_slider">
-  <div class="slide" data-blurred="<<background-image-url>>">
-    ...
-  </div>
-  <div class="slide" data-blurred="<<background-image-url>>">
-    ...
-  </div>
-  
+<div class="main">
   ...
-
-  <a href="#" class="is-prev">&laquo;</a>
-  <a href="#" class="is-next">&raquo;</a>
+  <div id="immersive_slider">
+    <div class="slide" data-blurred="<<background-image-url>>">
+      ...
+    </div>
+    <div class="slide" data-blurred="<<background-image-url>>">
+      ...
+    </div>
+    
+    ...
+  
+    <a href="#" class="is-prev">&laquo;</a>
+    <a href="#" class="is-next">&raquo;</a>
+  </div>
 </div>
 ````
-Make sure you change all the `<<background-image-url>>` occurrences to the image path you wish the slider to show when that slide is active. Feel free to remove the navigational buttons if you don't need it. Once that is done, simply call the script like this:
+The container main will be used to display the background images. Make sure you change all the `<<background-image-url>>` occurrences to the image path you wish the slider to show when that slide is active. Feel free to remove the navigational buttons if you don't need it. Once that is done, simply call the script like this:
  
 ````javascript
 $("#immersive_slider").immersive_slider({
