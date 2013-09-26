@@ -85,7 +85,7 @@ You can also trigger the slider to move programmatically as well:
 This method allows you to move the slider to the next one.
 
 ````javascript
-  $("#immersive_slider").mmoveNextoveUp();
+  $("#immersive_slider").moveNext();
 ````
 
 ### $.fn.movePrev()
