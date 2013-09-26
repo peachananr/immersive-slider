@@ -60,16 +60,19 @@ $("#immersive_slider").immersive_slider({
 and make sure the images you want to blow up as a background are in each slides like this:
 
 ````html
-<div id="immersive_slider">
-  <div class="slide">
-    <img src="<<background-image-url>>">
-    ...
-  </div>
-  <div class="slide">
-    <img src="<<background-image-url>>">
-    ...
-  </div>
+<div class="main">
   ...
+  <div id="immersive_slider">
+    <div class="slide">
+      <img src="<<background-image-url>>">
+      ...
+    </div>
+    <div class="slide">
+      <img src="<<background-image-url>>">
+      ...
+    </div>
+    ...
+  </div>
 </div>
 ````
 
