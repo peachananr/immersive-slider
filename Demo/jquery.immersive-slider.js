@@ -18,7 +18,9 @@
     slideSelector: ".slide",
     container: ".main",
     cssBlur: false,
-    pagination: true
+    pagination: true,
+    loop: true,
+    autoStart: 4000
 	};
   
   /*------------------------------------------------*/
@@ -167,6 +169,11 @@
       });
     }
     
+    if(settings.autoStart != 0 || settings.autoStart != false) {
+      setInterval(function() {
+        el.moveNext();
+      }, settings.autoStart);
+    }
     
     $(settings.container).find(".is-background").wrapAll( "<div class='is-bg-overflow' />");
     el.find(".is-slide").wrapAll( "<div class='is-overflow' />");
@@ -225,9 +232,10 @@
       var el = $(this),
         total = el.find(settings.slideSelector).length + 1,
         page_index_number = parseInt($(this).find(".is-slide.active").attr("id").replace('slide_','')) + 1;
-        console.log()
       if(page_index_number < total) {
         el.moveSlider(settings, "#slide_" + page_index_number)
+      } else {
+        if (settings.loop == true ) el.moveSlider(settings, "#slide_1")
       }
     }
     
@@ -237,6 +245,8 @@
         page_index_number = parseInt($(this).find(".is-slide.active").attr("id").replace('slide_','')) - 1;
       if(page_index_number <= total && page_index_number > 0) {
         el.moveSlider(settings, "#slide_" + page_index_number)
+      }else {
+        if (settings.loop == true ) el.moveSlider(settings, "#slide_" + (total - 1 ))
       }
     }
     
@@ -245,7 +255,7 @@
     }).bind("swipeLeft", function(){ 
       el.moveNext(); 
     });
-  
+    
   }
   
 }(window.jQuery);
