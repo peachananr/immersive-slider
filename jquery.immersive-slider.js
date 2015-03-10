@@ -79,43 +79,43 @@
     switch(settings.animation) {
       case 'slide':
         el.addClass("ease").css({
-          "-webkit-transform": "translate3d(" + pos + "%, 0, 0)", 
-          "-moz-transform": "translate3d(" + pos + "%, 0, 0)", 
-          "-ms-transform": "translate3d(" + pos + "%, 0, 0)", 
-          "transform": "translate3d(" + pos + "%, 0, 0)"
+          "-webkit-transform": "translate(" + pos + "%, 0)", 
+          "-moz-transform": "translate(" + pos + "%, 0)", 
+          "-ms-transform": "translate(" + pos + "%, 0)", 
+          "transform": "translate(" + pos + "%, 0)"
         });
       break;
       case 'slideUp':
         el.addClass("ease").css({
-          "-webkit-transform": "translate3d(0, " + pos + "%, 0)", 
-          "-moz-transform": "translate3d(0, " + pos + "%, 0)", 
-          "-ms-transform": "translate3d(0, " + pos + "%, 0)", 
-          "transform": "translate3d(0, " + pos + "%, 0)"
+          "-webkit-transform": "translate(0, " + pos + "%)", 
+          "-moz-transform": "translate(0, " + pos + "%)", 
+          "-ms-transform": "translate(0, " + pos + "%)", 
+          "transform": "translate(0, " + pos + "%)"
         });
       break;
       case 'bounce':
         el.addClass("bounce").css({
-          "-webkit-transform": "translate3d(" + pos + "%, 0, 0)", 
-          "-moz-transform": "translate3d(" + pos + "%, 0, 0)", 
-          "-ms-transform": "translate3d(" + pos + "%, 0, 0)", 
-          "transform": "translate3d(" + pos + "%, 0, 0)"
+          "-webkit-transform": "translate(" + pos + "%, 0)", 
+          "-moz-transform": "translate(" + pos + "%, 0)", 
+          "-ms-transform": "translate(" + pos + "%, 0)", 
+          "transform": "translate(" + pos + "%, 0)"
         });
       break;
       case 'bounceUp':
         el.addClass("bounce").css({
-          "-webkit-transform": "translate3d(0, " + pos + "%, 0)", 
-          "-moz-transform": "translate3d(0, " + pos + "%, 0)", 
-          "-ms-transform": "translate3d(0, " + pos + "%, 0)", 
-          "transform": "translate3d(0, " + pos + "%, 0)"
+          "-webkit-transform": "translate(0, " + pos + "%)", 
+          "-moz-transform": "translate(0, " + pos + "%)", 
+          "-ms-transform": "translate(0, " + pos + "%)", 
+          "transform": "translate(0, " + pos + "%)"
         });
       break;
       case 'fade':
         el.addClass("no-animation").fadeOut("slow", function() {
           el.css({
-            "-webkit-transform": "translate3d(" + pos + "%, 0, 0)", 
-            "-moz-transform": "translate3d(" + pos + "%, 0, 0)", 
-            "-ms-transform": "translate3d(" + pos + "%, 0, 0)", 
-            "transform": "translate3d(" + pos + "%, 0, 0)"
+            "-webkit-transform": "translate(" + pos + "%, 0)", 
+            "-moz-transform": "translate(" + pos + "%, 0)", 
+            "-ms-transform": "translate(" + pos + "%, 0)", 
+            "transform": "translate(" + pos + "%, 0)"
           }).fadeIn("slow");
         });
         
