@@ -2,10 +2,9 @@
 Create an immersive slider that changes the whole container to match the viewing slide
 Created by [Pete R.](http://www.thepetedesign.com), Founder of [BucketListly](http://www.bucketlistly.com)
 
-[![Immersive Slider](http://www.thepetedesign.com/images/immersive_slider_image.png "Immersive Slider")](http://www.thepetedesign.com/demos/immersive_slider_demo.html)
 
 ## Demo
-[View demo](http://www.thepetedesign.com/demos/immersive_slider_demo.html)
+[View demo](http://peachananr.github.io/immersive-slider/Demo/demo.html)
 
 ## Compatibility
 Modern browsers such as Chrome, Firefox, and Safari on both desktop and smartphones have been tested. Not tested on IE.
