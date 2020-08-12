@@ -143,6 +143,8 @@
         el = $(this),
         cssblur = "",
         pagination = "";
+
+    var isPaused = false;
         
     // Add all the gs sepecific classes  
     el.addClass("immersive_slider")
@@ -170,8 +172,8 @@
     }
     
     if(settings.autoStart != 0 || settings.autoStart != false) {
-      setInterval(function() {
-        el.moveNext();
+      var autotimer = setInterval(function() {
+        el.moveNext(false);
       }, settings.autoStart);
     }
     
@@ -200,11 +202,11 @@
       });
     }
    $(".is-next").click(function() {
-     el.moveNext();
+     el.moveNext(false);
      return false;
    });
    $(".is-prev").click(function() {
-     el.movePrev();
+     el.movePrev(false);
      return false;
    });
     
@@ -228,33 +230,52 @@
       $(settings.container).find(".is-bg-overflow").transformSlider(settings, pos);
     }
     
-    $.fn.moveNext = function() {
+    $.fn.moveNext = function(isSwiping) {
       var el = $(this),
         total = el.find(settings.slideSelector).length + 1,
         page_index_number = parseInt($(this).find(".is-slide.active").attr("id").replace('slide_','')) + 1;
-      if(page_index_number < total) {
-        el.moveSlider(settings, "#slide_" + page_index_number)
-      } else {
-        if (settings.loop == true ) el.moveSlider(settings, "#slide_1")
+
+      if (isPaused===false || isSwiping===true){
+        if(page_index_number < total) {
+          el.moveSlider(settings, "#slide_" + page_index_number)
+        } else {
+          if (settings.loop == true ) el.moveSlider(settings, "#slide_1")
+        }
       }
+
     }
     
-    $.fn.movePrev = function() {
+    $.fn.movePrev = function(isSwiping) {
       var el = $(this),
         total = el.find(settings.slideSelector).length + 1,
         page_index_number = parseInt($(this).find(".is-slide.active").attr("id").replace('slide_','')) - 1;
-      if(page_index_number <= total && page_index_number > 0) {
-        el.moveSlider(settings, "#slide_" + page_index_number)
-      }else {
-        if (settings.loop == true ) el.moveSlider(settings, "#slide_" + (total - 1 ))
+
+      if (isPaused===false || isSwiping===true){
+        if(page_index_number <= total && page_index_number > 0) {
+          el.moveSlider(settings, "#slide_" + page_index_number)
+        }else {
+          if (settings.loop == true ) el.moveSlider(settings, "#slide_" + (total - 1 ))
+        }
       }
     }
     
-    el.swipeEvents().bind("swipeRight",  function(){ 
-      el.movePrev();
-    }).bind("swipeLeft", function(){ 
-      el.moveNext(); 
-    });
+    el.swipeEvents().bind("swipeRight",  function(){
+      clearInterval(autotimer);
+      el.movePrev(true);
+      autotimer = setInterval(function() {
+        el.moveNext(false);
+      }, settings.autoStart);
+    }).bind("swipeLeft", function(){
+      clearInterval(autotimer);
+      el.moveNext(true);
+      autotimer = setInterval(function() {
+        el.moveNext(false);
+      }, settings.autoStart);
+    }).bind("mouseenter", function(){
+      isPaused = true;
+    }).bind("mouseleave", function(){
+      isPaused = false;
+    })
     
   }
   
